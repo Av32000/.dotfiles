@@ -1,0 +1,11 @@
+[Unit]
+Description=Switch to Light KDE Theme
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/av32000/utils/set_light_mode.sh
+
+[Install]
+WantedBy=graphical-session.target

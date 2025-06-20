@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/av32000/utils/apply_theme.sh
+Icon=application-x-shellscript
+Name=apply_theme.sh
+Type=Application
+X-KDE-AutostartScript=true

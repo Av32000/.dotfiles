@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer for Light KDE Theme Switch
+
+[Timer]
+OnCalendar=*-*-* 07:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
