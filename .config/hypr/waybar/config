@@ -10,14 +10,10 @@
     "margin-bottom":-11,
     //"margin-top":5,
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["bluetooth", "pulseaudio", "temperature","network","cpu","clock"],
+    "modules-right": ["bluetooth", "pulseaudio","network","battery","cpu","clock"],
     "modules-center": [],
     // Modules configuration
 
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
     "clock": {
         "timezone": "Europe/Paris",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -26,11 +22,8 @@
         "max-length": 25
     },
     "cpu": {
-        "interval":1,
-	"format": "\uf4bc  {usage}%"
-    },
-    "memory": {
-        "format": "{}% "
+        "interval":10,
+	"format": " {usage}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -45,22 +38,25 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "",
-        "format-ethernet": "\uEF09  {ifname}",
-        "tooltip-format": "via {gwaddr} {ifname} \uef09 ",
-        "format-linked": "",
-        "format-disconnected": "wifi",
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰌗 {ifname}",
+        "tooltip-format": "via {gwaddr} {ifname}",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-disconnected": "󰪎",
+	"on-click": "kitty nmtui"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "on-scroll-up": "~/.config/hypr/waybar/scripts/volume.sh up 5",
+        "on-scroll-down": "~/.config/hypr/waybar/scripts/volume.sh down 5",
+	"on-click-middle": "~/.config/hypr/waybar/scripts/volume.sh toggle",
+	"format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": "  {volume}%",
+        "format-muted": " {volume}%",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -79,7 +75,26 @@
      	},
      "sort-by-number": true
     },
-    
+    "battery": {
+       "interval": 60,
+       "align": 0,
+       "rotate": 0,
+       "full-at": 100,
+       "design-capacity": false,
+       "states": {
+           "good": 95,
+           "warning": 30,
+           "critical": 15
+       },
+       "format": "{icon}  {capacity}%",
+       "format-charging": " {capacity}%",
+       "format-plugged": "  {capacity}%",
+       "format-full": "{icon}  Full",
+       "format-alt": "{icon}  {time}",
+       "format-icons": ["", "", "", "", ""],
+       "format-time": "{H}h {M}min",
+       "tooltip": true
+    },
     "bluetooth": {
 	"format": "",
 	"format-disabled": "",
@@ -87,6 +102,6 @@
 	"tooltip-format": "{device_alias}",
 	"tooltip-format-connected": " {device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}",
-      "on-click": "blueman-manager"
+      "on-click": "blueberry"
     }
 }
