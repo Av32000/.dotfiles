@@ -22,7 +22,8 @@ $env.config.show_banner = false
 alias grep = grep --color=auto
 alias pacman = sudo pacman
 alias pacman-clean = pacman -Qdtq | sudo pacman -Rns -
-alias code = codium
+alias code = codium --enable-features=UseOzonePlatform --ozone-platform=wayland
+alias codium = codium --enable-features=UseOzonePlatform --ozone-platform=wayland
 alias py = python
 alias docker = sudo docker
 alias reboot = sudo reboot
