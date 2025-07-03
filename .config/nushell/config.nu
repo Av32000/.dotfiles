@@ -37,7 +37,7 @@ load-env {
 	"PNPM_HOME": "/home/av32000/.local/share/pnpm",
 }
 
-$env.path ++= ["~/.local/bin", "/home/av32000/.spicetify", "/home/av32000/.cargo/bin"]
+$env.path ++= ["~/.local/bin", "/home/av32000/.spicetify", "/home/av32000/.cargo/bin", "/home/av32000/.local/share/pnpm"]
 
 const NU_PLUGIN_DIRS = [
   ($nu.current-exe | path dirname)
