@@ -56,3 +56,34 @@ source ~/.config/nushell/completions/tar-completions.nu
 source ~/.config/nushell/completions/vscode-completions.nu
 
 source ~/.config/nushell/themes/catppuccin_macchiato.nu
+
+$env.__cmd_start = null
+$env.config.hooks = {
+  pre_execution : [
+    {||
+      $env.__cmd_start = (date now)
+    }
+  ]
+}
+
+$env.PROMPT_COMMAND_RIGHT = {||
+    # create a right prompt in magenta with green separators and am/pm underlined
+    let time_segment = ([
+        (ansi reset)
+        (ansi magenta)
+        (date now | format date '%x %X') # try to respect user's locale
+    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
+        str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
+
+    let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
+        (ansi rb)
+        ($env.LAST_EXIT_CODE)
+    ] | str join)
+    } else { "" }
+
+    let last_command_duration = if ($env.__cmd_start? != null) {
+        $"(ansi reset) (ansi magenta)[(ansi green)⏱ (((date now) - $env.__cmd_start) | format duration sec)(ansi magenta)]"
+    } else { "" }
+
+    ([$last_exit_code, (char space), $time_segment, $last_command_duration] | str join)
+}
