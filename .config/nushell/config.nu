@@ -38,6 +38,7 @@ load-env {
 }
 
 $env.path ++= ["~/.local/bin", "/home/av32000/.spicetify", "/home/av32000/.cargo/bin", "/home/av32000/.local/share/pnpm"]
+$env.SSH_AUTH_SOCK = ($env.XDG_RUNTIME_DIR | path join 'ssh-agent.socket')
 
 const NU_PLUGIN_DIRS = [
   ($nu.current-exe | path dirname)
