@@ -1,0 +1,84 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "scalingPriority": "hyprland",
+  "theme.font.name": "JetBrainsMono Nerd Font",
+  "theme.font.label": "JetBrainsMono Nerd Font Light",
+  "menus.transition": "crossfade",
+  "theme.bar.menus.enableShadow": false,
+  "theme.bar.menus.monochrome": false,
+  "theme.bar.menus.opacity": 100,
+  "theme.bar.menus.background": "#11111b",
+  "theme.bar.transparent": true,
+  "theme.bar.floating": false,
+  "bar.autoHide": "never",
+  "theme.bar.buttons.y_margins": "0.4em",
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.show_numbered": true,
+  "bar.windowtitle.custom_title": true,
+  "bar.windowtitle.icon": true,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock"
+      ]
+    }
+  },
+  "menus.dashboard.powermenu.avatar.image": "/home/av32000/.face",
+  "theme.bar.menus.menu.dashboard.profile.radius": "999em",
+  "menus.dashboard.controls.enabled": true,
+  "menus.dashboard.shortcuts.enabled": false,
+  "menus.dashboard.directories.enabled": false,
+  "menus.clock.time.hideSeconds": false,
+  "menus.clock.time.military": false,
+  "menus.clock.weather.location": "Paris",
+  "menus.clock.weather.enabled": false,
+  "bar.clock.format": "%I:%M %p",
+  "bar.clock.showIcon": false,
+  "bar.clock.icon": "",
+  "theme.bar.buttons.clock.spacing": "0.0em",
+  "bar.workspaces.monitorSpecific": false,
+  "bar.workspaces.showAllActive": false,
+  "bar.workspaces.icons.occupied": "",
+  "bar.volume.label": true,
+  "theme.bar.buttons.network.enableBorder": false,
+  "bar.network.truncation_size": 15,
+  "bar.clock.showTime": true,
+  "theme.bar.buttons.media.enableBorder": false,
+  "bar.media.format": "{title: - }{artist}",
+  "bar.notifications.hideCountWhenZero": false,
+  "theme.osd.orientation": "horizontal",
+  "theme.osd.location": "top right",
+  "theme.osd.margins": "7px 28px 7px 7px",
+  "theme.osd.enableShadow": true,
+  "theme.osd.shadow": "0px 0px 2px 1px #16161e",
+  "theme.osd.muted_zero": false,
+  "menus.volume.raiseMaximumVolume": true,
+  "theme.bar.buttons.battery.enableBorder": false,
+  "bar.workspaces.numbered_active_indicator": "underline"
+}

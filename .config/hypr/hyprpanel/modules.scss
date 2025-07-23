@@ -1,0 +1,134 @@
+/*
+ * Pastel Theme for Hyprpanel
+ * Colors:
+ * - Purple: #93a7f7 (Main accent)
+ * - Purple Light: #a19ef6 (Secondary accent)
+ * - Dark Base: #1e1e2e (Background for modules)
+ * - Lighter Background: #282a36 (Window background)
+ * - Text: #cdd6f4 (Soft white/light gray for general text)
+ * - Muted Text: #a6adc8 (For less prominent text)
+ */
+
+* {
+  font-family: JetBrainsMono Nerd Font, FiraCode, Noto Sans, FontAwesome, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.bar_item_box_visible.dashboard,
+.bar_item_box_visible.workspaces,
+.bar_item_box_visible.media,
+.bar_item_box_visible.volume,
+.bar_item_box_visible.network,
+.bar_item_box_visible.bluetooth,
+.bar_item_box_visible.battery,
+.bar_item_box_visible.clock {
+  border-radius: 15px;
+  background-color: #1e1e2e;
+  color: #a19ef6;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- Clock Module --- */
+.bar_item_box_visible.clock {
+  border-radius: 15px;
+  background: radial-gradient(
+    circle at center,
+    #a19ef6 0%,
+    #93a7f7 30%,
+    #a19ef6 60%,
+    #93a7f7 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient 8s ease-in-out infinite;
+  color: #1e1e2e;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  padding: 0 14px;
+}
+
+.bar.clock.bar-button-label {
+  color: #1e1e2e;
+  font-size: 15px;
+}
+
+/* --- Dashboard Module --- */
+.bar_item_box_visible.dashboard {
+  background-color: #1e1e2e;
+  border-radius: 100px;
+}
+
+.dashboard .bar-menu_label.bar-button_icon {
+  color: #93a7f7;
+}
+
+/* --- Workspaces --- */
+.workspaces.bar_item_box_visible {
+  background: none;
+}
+
+.workspaces-box-container .workspace-button .can_underline,
+.workspaces-box-container .workspace-button .can_underline:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px 2px;
+  background-color: #1e1e2e;
+  border-radius: 35px;
+  padding: 2px 9px;
+  font-weight: bolder;
+  font-size: 15px;
+  color: #93a7f7;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.workspaces-box-container .workspace-button .underline {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 3px;
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 5px 2px;
+  background: radial-gradient(circle, #93a7f7, #a19ef6);
+  background-size: 400% 400%;
+  animation: gradient 10s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  color: #1e1e2e;
+}
+
+.workspaces-box-container .workspace-number {
+  color: #93a7f7;
+  font-weight: normal;
+  font-size: 13px;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+/* --- Other Module --- */
+.bar_item_box_visible.battery,
+.bar_item_box_visible.bluetooth,
+.bar_item_box_visible.volume,
+.bar_item_box_visible.network {
+  background-color: #1e1e2e;
+  padding: 0 12px;
+}
+
+.battery.bar-button-label,
+.battery.bar-button-icon,
+.bluetooth.bar-button-label,
+.bluetooth.bar-button-icon,
+.volume.bar-button-label,
+.volume.bar-button-icon,
+.bar-button-label.network-label,
+.bar-button-icon.network-icon {
+  color: #93a7f7;
+  font-size: 15px;
+}
